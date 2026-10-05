@@ -7,14 +7,12 @@
 Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
 *Department of Statistics, Faculty of Science, University of Colombo, Sri Lanka*
 
-SICASH 2026 · Paper ID 45
-
-![Status](https://img.shields.io/badge/paper-camera--ready-6A2C91)
+![Status](https://img.shields.io/badge/paper-available-6A2C91)
 ![Code](https://img.shields.io/badge/code-coming%20soon-lightgrey)
 ![Dataset](https://img.shields.io/badge/dataset-CAP%20Sleep%20Database-blue)
 ![Model](https://img.shields.io/badge/model-ViT--B%2F16-6A2C91)
 
-[Paper (PDF)](paper/SICASH2026_Paper45_Camera-Ready.pdf) · [Slides](presentation/SICASH2026_Paper45_Presentation.pptx) · [Code](src/)
+[Paper (PDF)](paper/signal-to-image-vit-sleep-staging.pdf) · [Slides](presentation/signal-to-image-vit-sleep-staging-slides.pptx) · [Code](src/)
 
 </div>
 
@@ -90,8 +88,8 @@ All values are mean ± SD over subject-wise 5-fold cross-validation.
 
 ```
 .
-├── paper/          Camera-ready paper (PDF)
-├── presentation/   Conference slides and speaker notes
+├── paper/          Paper (PDF)
+├── presentation/   Slides and speaker notes
 ├── docs/figures/   Figures used in this README
 └── src/            Source code (coming soon)
 ```
@@ -107,8 +105,8 @@ Download: <https://physionet.org/content/capslpdb/1.0.0/>. The data is not redis
 
 ## Roadmap
 
-- [x] Camera-ready paper
-- [x] Conference presentation
+- [x] Paper
+- [x] Presentation slides
 - [ ] Source code release (`src/`)
 - [ ] Reproduction instructions for all paper tables
 - [ ] Trained model weights
@@ -118,10 +116,9 @@ Download: <https://physionet.org/content/capslpdb/1.0.0/>. The data is not redis
 If you use this work, please cite:
 
 ```bibtex
-@inproceedings{ramanayakage2026signal2image,
+@misc{ramanayakage2026signal2image,
   title     = {Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification},
   author    = {Ramanayakage, Janith R.R.H. and Arachchige, Chandima N.P.G.},
-  booktitle = {SICASH 2026},
   year      = {2026}
 }
 ```

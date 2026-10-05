@@ -1,4 +1,4 @@
-# Speaker Notes: Paper ID 45 (10-minute talk)
+# Speaker Notes (10-minute talk)
 
 ## Slide 1: Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification
 
