@@ -12,7 +12,7 @@ Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
 ![Dataset](https://img.shields.io/badge/dataset-CAP%20Sleep%20Database-blue)
 ![Model](https://img.shields.io/badge/model-ViT--B%2F16-6A2C91)
 
-[Paper (PDF)](paper/signal-to-image-vit-sleep-staging.pdf) · [Slides](presentation/signal-to-image-vit-sleep-staging-slides.pptx) · [Code](src/)
+[Paper (PDF)](paper/Systematic%20Evaluation%20of%20Signal-to-Image%20Transformation%20Pipelines%20for%20Vision%20Transformer-based%20Sleep%20Stage%20Classification.pdf) · [Slides](presentation/Systematic%20Evaluation%20of%20Signal-to-Image%20Transformation%20Pipelines%20for%20Vision%20Transformer-based%20Sleep%20Stage%20Classification%20-%20Presentation.pptx) · [Code](src/)
 
 </div>
 
@@ -88,7 +88,7 @@ All values are mean ± SD over subject-wise 5-fold cross-validation.
 
 ```
 .
-├── paper/          Paper (PDF)
+├── paper/          Paper (PDF), titled after the paper
 ├── presentation/   Slides and speaker notes
 ├── docs/figures/   Figures used in this README
 └── src/            Source code (coming soon)
