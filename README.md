@@ -1,14 +1,13 @@
 <div align="center">
 
-# EEG2Img: Signal-to-Image Pipelines for ViT-based Sleep Staging
-
-**Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification**
+# Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification
 
 Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
 *Department of Statistics, Faculty of Science, University of Colombo, Sri Lanka*
 
 ![Status](https://img.shields.io/badge/paper-available-6A2C91)
 ![Code](https://img.shields.io/badge/code-coming%20soon-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
 ![Dataset](https://img.shields.io/badge/dataset-CAP%20Sleep%20Database-blue)
 ![Model](https://img.shields.io/badge/model-ViT--B%2F16-6A2C91)
 
@@ -122,6 +121,10 @@ If you use this work, please cite:
   year      = {2026}
 }
 ```
+
+## License
+
+Released under the [MIT License](LICENSE).
 
 ## Contact
 
