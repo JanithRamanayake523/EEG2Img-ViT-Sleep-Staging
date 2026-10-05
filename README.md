@@ -2,7 +2,7 @@
 
 # Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification
 
-Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
+Janith R.R.H. Ramanayakage · [Chandima N.P.G. Arachchige](https://www.res.cmb.ac.lk/statistics/chandima-priyadarshani/)
 
 *Department of Statistics, Faculty of Science, University of Colombo, Sri Lanka*
 
@@ -12,7 +12,7 @@ Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
 ![Dataset](https://img.shields.io/badge/dataset-CAP%20Sleep%20Database-blue)
 ![Model](https://img.shields.io/badge/model-ViT--B%2F16-6A2C91)
 
-[Paper (PDF)](paper/Systematic%20Evaluation%20of%20Signal-to-Image%20Transformation%20Pipelines%20for%20Vision%20Transformer-based%20Sleep%20Stage%20Classification.pdf) · [Slides](presentation/Systematic%20Evaluation%20of%20Signal-to-Image%20Transformation%20Pipelines%20for%20Vision%20Transformer-based%20Sleep%20Stage%20Classification%20-%20Presentation.pptx) · [Code](src/)
+[Paper](paper/Systematic%20Evaluation%20of%20Signal-to-Image%20Transformation%20Pipelines%20for%20Vision%20Transformer-based%20Sleep%20Stage%20Classification.pdf) · [Slides](presentation/Systematic%20Evaluation%20of%20Signal-to-Image%20Transformation%20Pipelines%20for%20Vision%20Transformer-based%20Sleep%20Stage%20Classification%20-%20Presentation.pptx) · [Code](src/)
 
 </div>
 
@@ -27,7 +27,7 @@ Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
 
 ## Background and motivation
 
-This repository accompanies research carried out in 2025 as the final year research project for the **BSc (Hons) in Data Science** degree at the **Department of Statistics, Faculty of Science, University of Colombo**. The research was supervised by **Dr. Chandima N.P.G. Arachchige**, and the paper presents part of that project.
+This repository accompanies research carried out in 2025 as the final year research project for the **BSc (Hons) in Data Science** degree at the **Department of Statistics, Faculty of Science, University of Colombo**. The research was supervised by **[Dr. Chandima N.P.G. Arachchige](https://www.res.cmb.ac.lk/statistics/chandima-priyadarshani/)**, and the paper presents part of that project.
 
 Sleep disorders such as insomnia, sleep apnoea and narcolepsy affect tens of millions of adults and are linked to reduced quality of life, impaired cognition and higher cardiovascular and metabolic risk. Diagnosis and treatment follow-up depend on **sleep stage classification**, which is still done by trained technologists manually scoring polysomnography (PSG) recordings. This is labour-intensive, taking roughly 2–4 hours per full-night recording, and subjective: agreement even among experienced scorers is only about 82.6%.
 
