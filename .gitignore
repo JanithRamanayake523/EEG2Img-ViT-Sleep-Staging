@@ -1,0 +1,39 @@
+# Confidential / working material
+_archive*/
+*Reviewer*Form*
+Reviewer_Response*
+
+# Datasets (CAP Sleep Database is on PhysioNet; do not redistribute)
+data/
+*.edf
+*.edf+
+*.rec
+*.npy
+*.npz
+
+# Model artefacts and experiment outputs
+checkpoints/
+runs/
+wandb/
+lightning_logs/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+~$*
