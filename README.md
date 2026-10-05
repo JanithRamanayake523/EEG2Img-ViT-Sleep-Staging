@@ -3,6 +3,7 @@
 # Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification
 
 Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
+
 *Department of Statistics, Faculty of Science, University of Colombo, Sri Lanka*
 
 ![Status](https://img.shields.io/badge/paper-available-6A2C91)
@@ -24,9 +25,19 @@ Janith R.R.H. Ramanayakage · Chandima N.P.G. Arachchige
 - Evaluated with **subject-wise 5-fold cross-validation** on 80 CAP recordings (80,667 epochs), so no subject appears in both training and test data.
 - Class imbalance handled with **DCGAN synthetic augmentation applied to training folds only**.
 
+## Background and motivation
+
+This repository accompanies research carried out in 2025 as the final year research project for the **BSc (Hons) in Data Science** degree at the **Department of Statistics, Faculty of Science, University of Colombo**. The research was supervised by **Dr. Chandima N.P.G. Arachchige**, and the paper presents part of that project.
+
+Sleep disorders such as insomnia, sleep apnoea and narcolepsy affect tens of millions of adults and are linked to reduced quality of life, impaired cognition and higher cardiovascular and metabolic risk. Diagnosis and treatment follow-up depend on **sleep stage classification**, which is still done by trained technologists manually scoring polysomnography (PSG) recordings. This is labour-intensive, taking roughly 2–4 hours per full-night recording, and subjective: agreement even among experienced scorers is only about 82.6%.
+
+Deep learning can automate this task, and Vision Transformers (ViTs) have shown strong results in image recognition. Applying them to PSG requires first converting one-dimensional signals into two-dimensional images, yet existing ViT-based sleep studies mostly use spectrograms or raw signals. It was unclear which encoding suits ViTs best, which sampling rate and resampling method to use before encoding, and how much ImageNet pre-training helps on PSG-derived images. This research answers those questions through controlled experiments on a clinically heterogeneous dataset, the CAP Sleep Database, which includes healthy subjects and patients with sleep disorders.
+
 ## Abstract
 
-Sleep stage classification is a prerequisite for diagnosing sleep disorders and assessing sleep quality. Existing ViT-based approaches to polysomnography (PSG) rely mainly on spectrogram or raw-signal inputs, and the best way to turn one-dimensional physiological signals into images for ViTs has not been systematically studied. This work evaluates GASF, GADF, MTF and spectrogram encodings on the CAP Sleep Database, studies the effect of sampling rate and resampling method (FFT vs DWT), and compares pre-trained and from-scratch models across seven architectures.
+Sleep stage classification is a critical prerequisite for diagnosing sleep disorders and assessing sleep quality. While Vision Transformers (ViTs) have demonstrated remarkable success in image recognition, existing ViT-based approaches to polysomnography (PSG) sleep staging rely mainly on spectrogram or raw-signal inputs, and the optimal transformation of one-dimensional physiological signals into image representations suitable for ViT processing has not been systematically investigated. This paper presents a comprehensive evaluation of four image transformation techniques: Gramian Angular Summation Field (GASF), Gramian Angular Difference Field (GADF), Markov Transition Field (MTF), and spectrogram, for ViT-based sleep stage classification using the CAP Sleep Database (80 recordings, 80,667 epochs) with subject-wise 5-fold cross-validation. Experimental results demonstrate that GASF achieves the highest classification accuracy at 78.5% among the four transformations. Furthermore, Discrete Wavelet Transform (DWT) down sampling at 128 Hz optimizes performance, yielding 80.3% accuracy. Fine-tuning an ImageNet pre-trained ViT-B/16 model on balanced GASF representations (class balance obtained through DCGAN-based synthetic augmentation) achieves 86.2% accuracy (macro-F1 0.853), representing an improvement of 11.4 percentage points over training from scratch and 10.0 percentage points over a ResNet-50 baseline. These results indicate that GASF encoding with DWT resampling to 128 Hz is an effective preprocessing pipeline for ViT-based sleep stage classification, and that transfer learning from natural image pre-training is highly effective for PSG-derived representations.
+
+**Keywords:** Sleep stage classification; Vision Transformer; Gramian Angular Field; Signal-to-image transformation; Transfer learning
 
 ## Method
 
