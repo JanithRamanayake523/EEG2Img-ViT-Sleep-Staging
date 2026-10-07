@@ -1,6 +1,6 @@
 # Speaker Notes (10-minute talk + Q&A)
 
-**Pacing:** about 130 words per minute. Timings are cumulative; the talk ends at 9:45, leaving a 15-second buffer. Pause on each **bold takeaway**. Do not read slides aloud; say the point, then let the number sit.
+**Pacing:** about 130 words per minute. Timings are cumulative; the talk ends at 10:00, so there is no buffer: if you run long, trim Slides 7, 9 and 11 to one sentence each. Pause on each **bold takeaway**. Do not read slides aloud; say the point, then let the number sit.
 
 **One-sentence story to keep in mind:** *Turn each EEG epoch into an image the right way (GASF, 128 Hz DWT), fine-tune a pre-trained ViT, and you get 86.2% accuracy, 10 points above a CNN.*
 
@@ -12,7 +12,7 @@ Good morning, everyone. I'm Janith Ramanayake, and this is joint work with Dr. C
 
 ---
 
-## Slide 2: Why automate sleep staging? [0:25-1:15]
+## Slide 2: Why automate sleep staging? [0:25-1:10]
 
 Sleep disorders such as insomnia, apnoea and narcolepsy affect tens of millions of people. Diagnosis relies on polysomnography, where an expert manually scores every 30-second epoch of a whole night.
 
@@ -24,7 +24,7 @@ Deep learning has moved from CNNs and RNNs to Vision Transformers. ViTs are powe
 
 ---
 
-## Slide 3: Research gap and objectives [1:15-2:15]
+## Slide 3: Research gap and objectives [1:10-2:00]
 
 Prior ViT work for sleep staging uses spectrograms or raw signals. Four things are missing.
 
@@ -38,7 +38,7 @@ That gives us four experiments, one per question: image transformation; sampling
 
 ---
 
-## Slide 4: Dataset [2:15-3:00]
+## Slide 4: Dataset [2:00-2:40]
 
 We used the **CAP Sleep Database** from PhysioNet: 80 recordings, 6 healthy subjects and 74 patients. That gives **80,667 thirty-second epochs**, 16 channels at 512 Hz, labelled with six R&K stages: Wake, S1 to S4, and REM.
 
@@ -48,7 +48,7 @@ Most important for credibility: we use **subject-wise 5-fold cross-validation**.
 
 ---
 
-## Slide 5: Proposed pipeline [3:00-4:00]
+## Slide 5: Proposed pipeline [2:40-3:35]
 
 *Point at the figure, left to right.*
 
@@ -64,7 +64,7 @@ The orange and gold highlights are the winning choices, so you can read the best
 
 ---
 
-## Slide 6: Four signal-to-image transformations [4:00-5:00]
+## Slide 6: Four signal-to-image transformations [3:35-4:15]
 
 Each signal is first normalised to minus one to one, so every value can be treated as an angle.
 
@@ -77,7 +77,16 @@ All four go through the identical 4 by 4 composition into ViT-B/16, so differenc
 
 ---
 
-## Slide 7: Result 1, GASF performs best [5:00-5:50]
+## Slide 7: Same epoch, four images [4:15-4:50]
+Before the numbers, let's look at what these encodings actually produce. This is one 30-second epoch from one subject at the original 512 Hz, 16 channels tiled into a 4 by 4 composite.
+
+The **GADF** and **GASF** images share the same block structure, but GASF shows finer detail. The **spectrogram** is mostly dark: most of its energy sits in a few low-frequency bands. **MTF** looks busy and blocky, which is the quantisation into 32 bins.
+
+*Transition:* Now let's see which of these works best.
+
+---
+
+## Slide 8: Result 1, GASF performs best [4:50-5:30]
 
 *Experiment 1.* **GASF reaches 78.5% accuracy**, macro-F1 0.773. Next come GADF at 77.2%, MTF at 75.8% and the spectrogram at 74.1%.
 
@@ -87,7 +96,16 @@ An honest reading: the GASF-GADF gap is about the size of the fold-to-fold stand
 
 ---
 
-## Slide 8: Result 2, DWT at 128 Hz is optimal [5:50-6:40]
+## Slide 9: Downsampling: FFT vs DWT [5:30-6:05]
+Next question: do we need all 512 Hz? Here is the same epoch as a GASF image at 64, 128 and 256 Hz, plus the original, with two resampling methods.
+
+Top row, **FFT**: the images look almost identical at every rate. Bottom row, **DWT**: below 256 Hz the structure changes visibly, and the 64 Hz image is much smoother. So the two methods give the ViT genuinely different inputs. Which one is better?
+
+*Transition:* The accuracy answers that.
+
+---
+
+## Slide 10: Result 2, DWT at 128 Hz is optimal [6:05-6:50]
 
 *Experiment 2.* Taking GASF forward, we downsampled the 512 Hz signals to 256, 128 and 64 Hz, using either FFT resampling or DWT.
 
@@ -97,7 +115,16 @@ One caution: the margin over DWT at 256 Hz is small, so I would not over-claim a
 
 ---
 
-## Slide 9: Result 3, Pre-training adds 11+ points [6:40-7:30]
+## Slide 11: Class balancing with DCGAN [6:50-7:25]
+Before the pre-training result, one more ingredient: class balance. S1 is only 6.5% of epochs, so we use a DCGAN to generate synthetic GASF composites.
+
+On the left is a real composite; on the right is a generated one for the same class. It reproduces the overall 4 by 4 block layout and texture, although it is noisier than the real one. Synthetic images go **only into training folds**; test folds stay 100% real.
+
+*Transition:* With that in place, here is what pre-training adds.
+
+---
+
+## Slide 12: Result 3, Pre-training adds 11+ points [7:25-8:05]
 
 *Experiment 3.* This is the biggest effect in the paper. With GASF and 128 Hz DWT, the pre-trained ViT-B/16 reaches **86.2%** on balanced data, against **74.8%** from scratch: **plus 11.4 points**. On imbalanced data the gain is **plus 12.2**, 80.5% against 68.3%.
 
@@ -107,7 +134,7 @@ Balancing, using DCGAN synthetic samples generated **only inside training folds*
 
 ---
 
-## Slide 10: Result 4, ViT-B/16 beats other models [7:30-8:20]
+## Slide 13: Result 4, ViT-B/16 beats other models [8:05-8:50]
 
 *Experiment 4.* We ran seven architectures on the best pipeline. **ViT-B/16 is best at 86.2%**, macro-F1 0.853. Swin-B follows at 85.1%, then BEiT, DeiT and ViT-B/32.
 
@@ -115,7 +142,7 @@ Two things to note. First, the **ResNet-50 CNN baseline reaches 76.2%**, a full 
 
 ---
 
-## Slide 11: Class-wise results and limitations [8:20-9:05]
+## Slide 14: Class-wise results and limitations [8:50-9:30]
 
 Per class, S2 and Wake are strongest. **S1 is weakest**: it is the rarest stage at 6.5% of epochs and the most ambiguous even for human scorers. It also benefits most from balancing.
 
@@ -130,7 +157,7 @@ Read the results as strong evidence on one dataset, not a final verdict.
 
 ---
 
-## Slide 12: Conclusions and future work [9:05-9:45]
+## Slide 15: Conclusions and future work [9:30-9:50]
 
 To sum up, the effective pipeline has three parts: **GASF encoding, DWT downsampling to 128 Hz, and a fine-tuned ImageNet ViT-B/16**. It reaches **86.2% accuracy and 0.853 macro-F1**, 10 points above a ResNet-50.
 
@@ -138,7 +165,7 @@ Next, we plan multimodal fusion, lightweight ViTs for edge deployment, and cross
 
 ---
 
-## Slide 13: Thank you [9:45-10:00]
+## Slide 16: Thank you [9:50-10:00]
 
 Thank you. The paper and slides are in the repository, and I'm happy to take questions.
 
@@ -177,7 +204,7 @@ Unknown. We used R&K labels on a single database, and cross-dataset validation i
 
 # Delivery tips
 
-- **Checkpoints:** be on Slide 5 by 3:00 and Slide 9 by 6:40. If you are behind, shorten Slide 6 and the Slide 11 limitations to one sentence each.
+- **Checkpoints:** be on Slide 6 by 3:35 and Slide 12 by 7:25. If you are behind, shorten Slide 6 and the Slide 14 limitations to one sentence each.
 - **If you are ahead of time:** add a sentence on why the labels' 82.6% agreement caps achievable accuracy.
 - Keep the four result slides (7 to 10) crisp. The audience should leave with three numbers: **78.5%** (GASF), **+11.4 points** (pre-training), **86.2%** (best model).
 - Slow down on the Slide 5 figure. It is the one slide where the audience must see the whole system.
