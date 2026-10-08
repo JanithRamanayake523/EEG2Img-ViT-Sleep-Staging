@@ -75,8 +75,8 @@ Please read this before running anything.
 - **The default config follows the thesis protocol**, not the SICASH one: random epoch-level splits (`experiments.split_by: epoch`), a 12,000-epoch subsample, an 8-bin MTF and a 64-sample spectrogram window. The SICASH paper used subject-wise 5-fold cross-validation, a 32-bin MTF, a 256-sample Hamming spectrogram and all 80 recordings. Setting `experiments.split_by=subject` gives subject-wise splits, but a full SICASH re-run needs further config and script changes.
 
 ```bash
-git clone <this repo>
-cd <repo>
+git clone https://github.com/JanithRamanayake523/EEG2Img-ViT-Sleep-Staging.git
+cd EEG2Img-ViT-Sleep-Staging
 pip install -e ".[dev]"
 pytest
 ```
