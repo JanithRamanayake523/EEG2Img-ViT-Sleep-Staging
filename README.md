@@ -34,11 +34,11 @@ The GASF-vs-GADF margin and the 128-vs-256 Hz margin are about the size of the f
 
 The work produced three publications. They run **different experiments with different numbers**, so compare figures only within one publication.
 
-| Publication | Venue | Folder |
-|---|---|---|
-| *Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification*: paper, slides, speaker notes | SICASH 2026 | [publications/SICASH-2026](publications/SICASH-2026) |
-| *Representation Separability of Signal-to-Image Transformations for Sleep Stage Classification Using Pretrained Vision Transformers*: abstract and extended abstract | ICDS 2025, Colombo | [publications/ICDS-2025](publications/ICDS-2025) |
-| *Enhancing Sleep Stage Classification with Vision Transformers*: undergraduate thesis, defence slides, LaTeX source | University of Colombo, 2025 | [publications/Thesis-UOC-2025](publications/Thesis-UOC-2025) |
+| Publication | Venue | Official link | Folder |
+|---|---|---|---|
+| *Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification*: paper, slides, speaker notes | SICASH 2026 | Not yet available | [publications/SICASH-2026](publications/SICASH-2026) |
+| *Representation Separability of Signal-to-Image Transformations for Sleep Stage Classification Using Pretrained Vision Transformers*: abstract and extended abstract | ICDS 2025, Colombo | [Proceedings](https://science.cmb.ac.lk/icds/icds-2025/proceedings/#flipbook-df_1135/78/) | [publications/ICDS-2025](publications/ICDS-2025) |
+| *Enhancing Sleep Stage Classification with Vision Transformers*: undergraduate thesis, defence slides, LaTeX source | University of Colombo, 2025 | [Department of Statistics, UoC](https://science.cmb.ac.lk/statistics/) | [publications/Thesis-UOC-2025](publications/Thesis-UOC-2025) |
 
 Chronology: thesis (March 2025) → ICDS 2025 → SICASH 2026. The thesis used a ~12,000-epoch subsample with random epoch-level splits. The ICDS work ranks 1,016 transformation/fusion/channel strategies by embedding separability. The SICASH paper re-runs the pipeline on 80 recordings with subject-wise cross-validation, so its numbers are the most rigorous. See [publications/README.md](publications/README.md).
 
