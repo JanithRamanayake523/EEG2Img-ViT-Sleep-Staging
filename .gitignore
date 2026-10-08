@@ -37,3 +37,7 @@ Thumbs.db
 .vscode/
 .idea/
 ~$*
+
+# Pipeline outputs
+results/
+*.h5

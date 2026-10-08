@@ -1,0 +1,98 @@
+# Default configuration. Every value can be overridden from the command line:
+#   python scripts/02_exp1_transforms.py -o classifier.epochs=3 -o experiments.epochs_per_class=200
+seed: 42
+device: auto            # auto | cpu | cuda | cuda:0
+
+paths:
+  raw_data: data/raw            # root that contains the CAP .edf and .txt files (searched recursively)
+  processed: data/processed     # generated images + manifests
+  results: results              # metrics, plots, tables
+  checkpoints: checkpoints      # model weights
+
+# ------------------------------------------------------------------ data selection (Section 4.2)
+data:
+  required_fs: 512              # only recordings sampled at 512 Hz are used
+  epoch_length_s: 30
+  # How scored epochs are matched to the EDF signal:
+  #   first_stage : the first scored epoch is the start of the signal (what the original notebooks did)
+  #   edf_start   : use the EDF header start time to compute the offset to the first scored epoch
+  align: first_stage
+  manual_offsets_epochs: {}     # per-subject extra epoch offset, e.g. {nfle27: 4}
+  exclude_subjects: []          # subject ids to skip
+
+# ------------------------------------------------------------------ signal pre-processing (Table 6.1)
+preprocessing:
+  avg_before_filter: true       # 'Avg' channel = mean of the 15 raw channels (as in the notebooks)
+  standardize: true             # per-channel z-score over the recording
+  dwt_wavelet: db4              # wavelet for DWT down-sampling (not stated in the thesis; assumption)
+
+# ------------------------------------------------------------------ image generation (Section 6.2.2)
+images:
+  size: 224
+  grid: 4
+  colormap: viridis
+  spectrogram: {nperseg: 64, noverlap: 32, log: false}
+  mtf: {n_bins: 8, strategy: quantile}
+  workers: 1                    # subjects processed in parallel
+
+# Result of Experiments 1 and 2 (thesis): GASF, DWT-downsampled to 128 Hz.
+best_setting:
+  transform: gasf
+  fs: 128
+  resample: dwt                 # orig | fft | dwt
+
+# ------------------------------------------------------------------ experiment sampling
+experiments:
+  dataset: DS9
+  epochs_per_class: 2000        # Exp. 1/2/4: 12,000 epochs = 2,000 per stage
+  val_fraction: 0.2             # Exp. 1-4, 6. (Exp. 5 / GAN uses gan.val_fraction)
+  split_by: epoch               # epoch | subject. 'epoch' mirrors the thesis; 'subject' avoids leakage
+
+# ------------------------------------------------------------------ classifier training
+classifier:
+  epochs: 10
+  batch_size: 32
+  lr: 0.0001
+  weight_decay: 0.01
+  label_smoothing: 0.0
+  patience: 5                   # early stopping on val accuracy
+  lr_factor: 0.2                # ReduceLROnPlateau on val loss
+  lr_patience: 3
+  min_lr: 0.000001
+  amp: true
+  num_workers: 4
+  augment: none                 # none | light (brightness/contrast jitter)
+  pretrained_model: vit_b16     # key of PRETRAINED_MODELS
+
+# From-scratch ViT (Table 7.4)
+scratch_vit:
+  patch_size: 16
+  embed_dim: 256
+  depth: 6
+  heads: 8
+  mlp_dim: 512
+  dropout: 0.1
+  pos_embed: sincos             # sincos (thesis Eq. 6.23-6.25) | learned
+
+# ------------------------------------------------------------------ DCGAN (Tables 7.6, 7.7)
+gan:
+  latent_dim: 100
+  batch_size: 32
+  epochs: 500
+  pretrain_epochs: 100          # Exp. 5: shared DCGAN on all classes before per-class fine-tuning
+  lr_g: 0.0002
+  lr_d: 0.0002
+  beta1: 0.5
+  label_smoothing: 0.9          # real-label target for the discriminator (1.0 disables)
+  val_fraction: 0.3             # Exp. 5 uses a 70/30 train/validation split
+  sample_every: 25
+  checkpoint_every: 100
+  num_workers: 4
+  amp: false
+  images_per_class: 20000       # synthetic images generated per class (Exp. 6)
+  eval_samples: 500             # images used for SSIM / FID / MPED
+
+# ------------------------------------------------------------------ Exp. 6 (GAN-augmented data)
+augmentation:
+  train_images_per_class: 10000
+  mixed_original_fraction: 0.5

@@ -1,0 +1,154 @@
+\documentclass[12pt]{report}
+
+% Packages
+\usepackage[a4paper, top=1in, bottom=1in, left=1.5in, right=1in]{geometry}  % 1-inch margins
+\usepackage{setspace}  % Line spacing
+\usepackage{graphicx}
+\usepackage{titlesec} 
+\usepackage{acronym}
+\usepackage{changepage}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{newtxtext,newtxmath}
+
+
+
+
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{ref.bib}
+
+
+
+\setcounter{secnumdepth}{4}
+\linespread{1.5}
+
+
+% Center Chapter Titles
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries\centering} % Large bold centered title
+  {\chaptername\ \thechapter}{20pt}{\LARGE}
+
+% Title Page
+
+
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+
+    
+    {\fontsize{16pt}{19pt}\selectfont \textbf{Enhancing Sleep Stage Classification with}}\\
+    {\fontsize{16pt}{19pt}\selectfont \textbf{Vision Transformers}} \\ [0.4 cm]
+    {\fontsize{16pt}{19pt}\selectfont \textbf{A Study on Image Transformations, Data Augmentation, and Model Optimization}}\\
+
+    \vfill
+
+    
+    {\fontsize{12pt}{15pt}\selectfont By}\\
+    {\fontsize{14pt}{17pt}\selectfont \textbf{H.R.J.R. Rashmika}}\\
+
+    \vfill
+    
+    \fontsize{12pt}{14pt}\selectfont This dissertation is submitted as a partial fulfillment of the\\
+    {\fontsize{12pt}{14pt}\selectfont \textbf{B.Sc. (Hons) in Data Science}}\\ [1 cm]
+
+    
+    {\fontsize{14pt}{17pt}\selectfont Department of Statistics}\\
+    {\fontsize{14pt}{17pt}\selectfont University of Colombo, Sri Lanka}\\ [1 cm]
+
+    
+    {\fontsize{12pt}{14pt}\selectfont March 2025}\\
+
+\end{titlepage}
+
+
+
+
+
+\pagenumbering{roman}
+
+%\maketitle
+
+\chapter*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+{\setlength{\parindent}{0pt}
+Sleep stage classification is essential for diagnosing sleep disorders and analyzing sleep patterns. This study investigates the effectiveness of Vision Transformers (ViTs) for sleep stage classification using EEG-based image transformations. Multiple transformation techniques, including Spectrograms, Gramian Angular Fields (GADF, GASF), and Markov Transition Fields (MTF), are evaluated to identify the most suitable representation. Additionally, the impact of different sampling frequencies and resampling methods is examined. \\
+
+To mitigate class imbalance and subject variability, a Deep Convolutional Generative Adversarial Network (DCGAN) is employed to generate synthetic sleep stage images. The effectiveness of GAN-augmented data is assessed by comparing classification performance on datasets with and without synthetic samples. Furthermore, we compare ViTs trained from scratch versus pre-trained ViTs and evaluate various pre-trained models to determine the optimal architecture. \\
+
+Experimental results show that GASF with Discrete Wavelet Transform (DWT) at 128 Hz yields the best classification performance. GAN-based augmentation improves accuracy by enhancing dataset diversity. The final model, ViT-B/16 fine-tuned on augmented data, achieves the highest classification accuracy  84.8\% and generalizes well across independent datasets. These findings highlight the potential of Vision Transformers in advancing automated sleep stage classification. \\
+
+\textbf{Keywords:} Sleep stage classification, Vision Transformers, EEG, Image transformation, GAN, Deep learning, Data augmentation.
+}
+
+\chapter*{Declaration}
+\addcontentsline{toc}{section}{Declaration}
+
+{\setlength{\parindent}{0pt}
+This thesis is my original work and has not been submitted previously for a degree at this or any other university/institute. To the best of my knowledge, it does not contain any material published or written by another person, except as acknowledged in the text.\\ [0.5 cm]
+
+\noindent
+\textbf{Candidate:}    \hspace{3.75cm} \textbf{Signature:} \underline{\hspace{6cm}}  \\
+H.R.J.R. Rashmika
+\vspace{0.5cm}
+
+\noindent
+\hspace{6cm}  \textbf{Date:} \underline{\hspace{7cm}} 
+
+\vspace{1cm}
+
+This is to certify that this dissertation is based on the work carried out by Mr. H.R.J.R. Rashmika under my supervision. This dissertation has been prepared according to the format stipulated and is of acceptable standard.\\ [0.5 cm]
+
+\noindent
+\textbf{Supervisor:}    \hspace{3.56cm} \textbf{Signature:} \underline{\hspace{6cm}}  
+\hspace{8.25cm} Dr. G.A.C.N. Priyadarshani, \\
+\hspace{8.25cm} Senior lecturer, \\
+\hspace{8.25cm} Department of Statistics,  \\
+\hspace{8.25cm} University of Colombo. \hspace{2.3cm} \textbf{Date:} \underline{\hspace{7cm}} \\
+
+}
+
+
+\tableofcontents
+\addcontentsline{toc}{section}{Table of contents}
+
+\listoffigures 
+\addcontentsline{toc}{section}{List of Figures}
+
+\listoftables   
+\addcontentsline{toc}{section}{List of Tables}
+
+\include{Acronyms}
+
+\pagenumbering{arabic}
+
+\include{Chapters/ch1-Introduction}
+
+\include{Chapters/ch3-Literature_review}
+
+\include{Chapters/ch6-Methodology}
+
+\include{Chapters/ch4-Data}
+
+\include{Chapters/ch5-Primary_analysis}
+
+\include{Chapters/ch7-Results}
+
+\include{Chapters/ch8-Conclusion}
+
+\include{Chapters/ch9-Appendices}
+\addtocontents{toc}{\vspace{1em}}
+\addcontentsline{toc}{section}{Appendices}
+
+\printbibliography
+\addtocontents{toc}{\vspace{1em}}
+\addcontentsline{toc}{section}{Bibliography}
+
+\end{document}
