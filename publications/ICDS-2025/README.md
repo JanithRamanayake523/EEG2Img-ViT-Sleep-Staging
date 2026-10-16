@@ -7,8 +7,9 @@ Vision Transformers.** International Conference in Data Science 2025, Colombo, S
 |---|---|
 | `ICDS Abstract 2025` | Abstract |
 | `ICDS Extended Abstract 2025` | Extended abstract |
+| `ICDS Presentation` | Conference presentation (`.pdf` only) |
 
-Each is available as `.docx` and `.pdf`.
+The abstracts are available as `.docx` and `.pdf`.
 
 Study summary: 1,016 combinations of signal-to-image method, fusion strategy and channel selection on 108 CAP
 recordings, ranked by embedding separability (Fisher ratio, silhouette, Davies-Bouldin, Calinski-Harabasz).
