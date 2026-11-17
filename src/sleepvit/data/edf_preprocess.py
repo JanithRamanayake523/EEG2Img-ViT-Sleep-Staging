@@ -11,8 +11,13 @@ import numpy as np
 from scipy import signal
 
 from ..constants import (
-    CANONICAL_CHANNELS, CHANNEL_ALIASES, CHANNEL_FALLBACKS, EEG_CHANNELS, FILTER_BANDS,
-    NOTCH_HZ, SOURCE_CHANNELS,
+    CANONICAL_CHANNELS,
+    CHANNEL_ALIASES,
+    CHANNEL_FALLBACKS,
+    EEG_CHANNELS,
+    FILTER_BANDS,
+    NOTCH_HZ,
+    SOURCE_CHANNELS,
 )
 from .resampling import resample
 

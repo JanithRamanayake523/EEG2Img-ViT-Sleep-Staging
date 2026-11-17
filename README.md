@@ -1,5 +1,9 @@
 # Vision Transformers for Sleep Stage Classification (EEG → Image)
 
+![CI](https://github.com/JanithRamanayake523/EEG2Img-ViT-Sleep-Staging/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 **Research question:** if you want a Vision Transformer (ViT) to score sleep stages from polysomnography (PSG), *how should you turn the 1-D physiological signals into images?*
 
 This repository holds the code and the publications from an undergraduate research project (BSc (Hons) in Data Science, Department of Statistics, Faculty of Science, University of Colombo, 2025) by Janith R.R.H. Ramanayakage, supervised by [Dr. Chandima N.P.G. Arachchige](https://www.res.cmb.ac.lk/statistics/chandima-priyadarshani/). It uses the PhysioNet **CAP Sleep Database** and six-stage R&K scoring (Wake, S1, S2, S3, S4, REM).
@@ -59,6 +63,7 @@ Chronology: thesis (March 2025) → ICDS 2025 → SICASH 2026. The thesis used a
 ├── scripts/             One script per pipeline stage / experiment (00 … 10)
 ├── configs/             default.yaml with every setting
 ├── tests/               Unit tests (14)
+├── data/                Put the CAP Sleep Database here (git-ignored, see data/README.md)
 ├── docs/                Code guide, design notes, notebook map, shared figures
 └── publications/
     ├── SICASH-2026/     Slides

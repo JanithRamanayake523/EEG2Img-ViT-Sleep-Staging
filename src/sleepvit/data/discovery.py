@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Optional
 
-from ..constants import CHANNEL_ALIASES, GROUP_PREFIXES, EEG_CHANNELS
+from ..constants import CHANNEL_ALIASES, EEG_CHANNELS, GROUP_PREFIXES
 
 _SUBJECT_RE = re.compile(r"^(" + "|".join(sorted(GROUP_PREFIXES, key=len, reverse=True)) + r")(\d+)$", re.I)
 

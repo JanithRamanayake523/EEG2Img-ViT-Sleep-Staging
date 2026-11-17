@@ -4,8 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sleepvit"
-version = "0.1.0"
+version = "1.0.0"
 description = "Sleep stage classification with Vision Transformers using EEG/PSG image transformations and DCGAN augmentation"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Janith R.R.H. Ramanayakage", email = "janithramanayake523@gmail.com" }]
+keywords = ["sleep staging", "vision transformer", "EEG", "polysomnography", "gramian angular field", "DCGAN"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
 requires-python = ">=3.9"
 dependencies = [
     "numpy",
@@ -30,10 +41,26 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest"]
+dev = ["pytest", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/JanithRamanayake523/EEG2Img-ViT-Sleep-Staging"
+Issues = "https://github.com/JanithRamanayake523/EEG2Img-ViT-Sleep-Staging/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["sleepvit"]

@@ -11,11 +11,18 @@ import pandas as pd
 
 from ..utils import get_logger
 from .annotations import (
-    first_scored_onset, hypnogram_to_epoch_labels, offset_from_edf_start, parse_hypnogram,
+    first_scored_onset,
+    hypnogram_to_epoch_labels,
+    offset_from_edf_start,
+    parse_hypnogram,
 )
 from .discovery import Subject
 from .edf_preprocess import (
-    ChannelResolutionError, epoch_signal, load_recording, resample_recording, standardize,
+    ChannelResolutionError,
+    epoch_signal,
+    load_recording,
+    resample_recording,
+    standardize,
 )
 from .image_transforms import epoch_to_image
 

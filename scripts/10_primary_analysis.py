@@ -23,7 +23,7 @@ import seaborn as sns
 from scipy.signal import welch
 
 from sleepvit.config import add_common_args, load_config
-from sleepvit.constants import EEG_CHANNELS, STAGE_NAMES, STAGE_TO_ID
+from sleepvit.constants import EEG_CHANNELS, STAGE_TO_ID
 from sleepvit.data.annotations import hypnogram_to_epoch_labels, parse_hypnogram
 from sleepvit.data.discovery import discover_subjects
 from sleepvit.data.edf_preprocess import epoch_signal, load_recording, resolve_channels

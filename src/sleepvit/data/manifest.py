@@ -29,7 +29,7 @@ def select_dataset(df: pd.DataFrame, ds_id: str) -> pd.DataFrame:
 def balanced_sample(df: pd.DataFrame, per_class: int, seed: int = 42) -> pd.DataFrame:
     """Draw ``per_class`` rows per stage; classes with fewer rows are sampled with replacement."""
     parts = []
-    for stage, group in df.groupby("stage"):
+    for _stage, group in df.groupby("stage"):
         parts.append(group.sample(n=per_class, replace=len(group) < per_class, random_state=seed))
     return pd.concat(parts).sample(frac=1.0, random_state=seed).reset_index(drop=True)
 
@@ -38,7 +38,7 @@ def upsample(df: pd.DataFrame, per_class: int | None = None, seed: int = 42) -> 
     """Balance by duplicating minority-class rows up to the size of the largest class (or ``per_class``)."""
     target = per_class or int(df["stage"].value_counts().max())
     parts = []
-    for stage, group in df.groupby("stage"):
+    for _stage, group in df.groupby("stage"):
         extra = target - len(group)
         parts.append(group if extra <= 0 else pd.concat(
             [group, group.sample(n=extra, replace=True, random_state=seed)]))

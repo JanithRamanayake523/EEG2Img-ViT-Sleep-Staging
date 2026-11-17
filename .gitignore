@@ -1,27 +1,30 @@
-# Confidential / working material
+# ---------------------------------------------------------------- local-only material
+# Everything private (full papers, abstracts, thesis, speaker notes, archives) lives in _local/,
+# which mirrors the repository layout. Nothing in it is published.
+/_local/
 _archive*/
-*Reviewer*Form*
-Reviewer_Response*
 
-# Datasets (CAP Sleep Database is on PhysioNet; do not redistribute)
-/data/
+# ---------------------------------------------------------------- data and outputs
+# Keep data/README.md, ignore everything else in data/
+/data/*
+!/data/README.md
+/results/
+/checkpoints/
+runs/
+wandb/
+lightning_logs/
 *.edf
 *.edf+
 *.rec
 *.npy
 *.npz
-
-# Model artefacts and experiment outputs
-checkpoints/
-runs/
-wandb/
-lightning_logs/
+*.h5
 *.pt
 *.pth
 *.ckpt
 *.safetensors
 
-# Python
+# ---------------------------------------------------------------- python
 __pycache__/
 *.py[cod]
 .venv/
@@ -29,23 +32,12 @@ venv/
 .ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
 *.egg-info/
 
-# OS / editors
+# ---------------------------------------------------------------- OS / editors
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 ~$*
-
-# Pipeline outputs
-results/
-*.h5
-
-# Local-only publication files (not published)
-/publications/SICASH-2026/SICASH Paper 2026.pdf
-/publications/ICDS-2025/ICDS Abstract 2025.*
-/publications/ICDS-2025/ICDS Extended Abstract 2025.*
-/publications/Thesis-UOC-2025/UOC Thesis.pdf
-/publications/Thesis-UOC-2025/source/
-/publications/SICASH-2026/speaker-notes.md

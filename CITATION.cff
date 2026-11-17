@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or the associated research, please cite it as below."
+title: "Vision Transformers for Sleep Stage Classification (EEG to Image)"
+type: software
+authors:
+  - family-names: Ramanayakage
+    given-names: "Janith R.R.H."
+  - family-names: Arachchige
+    given-names: "Chandima N.P.G."
+repository-code: "https://github.com/JanithRamanayake523/EEG2Img-ViT-Sleep-Staging"
+license: MIT
+keywords:
+  - sleep stage classification
+  - vision transformer
+  - polysomnography
+  - signal-to-image
+  - DCGAN

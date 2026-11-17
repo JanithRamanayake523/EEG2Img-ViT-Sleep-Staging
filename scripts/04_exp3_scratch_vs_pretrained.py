@@ -12,7 +12,7 @@ import argparse
 from pathlib import Path
 
 from sleepvit.config import add_common_args, load_config
-from sleepvit.data.manifest import balanced_sample, split, select_dataset, upsample
+from sleepvit.data.manifest import balanced_sample, select_dataset, split, upsample
 from sleepvit.experiment_utils import best_setting_name, require_manifest
 from sleepvit.training.pipeline import run_classification, summarise
 from sleepvit.utils import ensure_dir, get_logger, seed_everything

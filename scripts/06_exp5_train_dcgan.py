@@ -13,7 +13,6 @@ import argparse
 from pathlib import Path
 
 import pandas as pd
-import torch
 
 from sleepvit.config import add_common_args, load_config
 from sleepvit.constants import STAGE_NAMES

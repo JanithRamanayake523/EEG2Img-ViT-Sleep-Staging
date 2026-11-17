@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 from scipy.signal import spectrogram
 
-from ..constants import GRID_SIZE, IMAGE_SIZE, TRANSFORMS
+from ..constants import IMAGE_SIZE, TRANSFORMS
 
 
 def _colormap(name: str):
