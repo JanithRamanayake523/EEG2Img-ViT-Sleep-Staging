@@ -4,7 +4,7 @@ _archive*/
 Reviewer_Response*
 
 # Datasets (CAP Sleep Database is on PhysioNet; do not redistribute)
-data/
+/data/
 *.edf
 *.edf+
 *.rec
