@@ -41,3 +41,10 @@ Thumbs.db
 # Pipeline outputs
 results/
 *.h5
+
+# Local-only publication files (not published)
+/publications/SICASH-2026/SICASH Paper 2026.pdf
+/publications/ICDS-2025/ICDS Abstract 2025.*
+/publications/ICDS-2025/ICDS Extended Abstract 2025.*
+/publications/Thesis-UOC-2025/UOC Thesis.pdf
+/publications/Thesis-UOC-2025/source/
