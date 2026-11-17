@@ -24,7 +24,7 @@ Subject-wise 5-fold cross-validation on 80 recordings (80,667 epochs):
 | Does ImageNet pre-training help? | Yes: **+11.4 points** (86.2% vs 74.8% from scratch, balanced data) |
 | Best model? | **ViT-B/16**, 86.2% accuracy, 0.853 macro-F1, 10 points above ResNet-50 |
 
-The GASF-vs-GADF margin and the 128-vs-256 Hz margin are about the size of the fold-to-fold standard deviation, and no formal significance tests were run, so read those two rankings as indicative. See the [paper](publications/SICASH-2026) for limitations.
+The GASF-vs-GADF margin and the 128-vs-256 Hz margin are about the size of the fold-to-fold standard deviation, and no formal significance tests were run, so read those two rankings as indicative. See the [SICASH folder](publications/SICASH-2026) for limitations.
 
 | Same epoch, four encodings | FFT vs DWT down-sampling |
 |---|---|
@@ -36,9 +36,9 @@ The work produced three publications. They run **different experiments with diff
 
 | Publication | Venue | Official link | Folder |
 |---|---|---|---|
-| *Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification*: paper, slides, speaker notes | SICASH 2026 | Not yet available | [publications/SICASH-2026](publications/SICASH-2026) |
-| *Representation Separability of Signal-to-Image Transformations for Sleep Stage Classification Using Pretrained Vision Transformers*: abstract and extended abstract | ICDS 2025, Colombo | [Proceedings](https://science.cmb.ac.lk/icds/icds-2025/proceedings/#flipbook-df_1135/78/) | [publications/ICDS-2025](publications/ICDS-2025) |
-| *Enhancing Sleep Stage Classification with Vision Transformers*: undergraduate thesis, defence slides, LaTeX source | University of Colombo, 2025 | [Department of Statistics, UoC](https://science.cmb.ac.lk/statistics/) | [publications/Thesis-UOC-2025](publications/Thesis-UOC-2025) |
+| *Systematic Evaluation of Signal-to-Image Transformation Pipelines for Vision Transformer-based Sleep Stage Classification*: slides, speaker notes, results summary | SICASH 2026 | Not yet available | [publications/SICASH-2026](publications/SICASH-2026) |
+| *Representation Separability of Signal-to-Image Transformations for Sleep Stage Classification Using Pretrained Vision Transformers*: conference presentation | ICDS 2025, Colombo | [Proceedings](https://science.cmb.ac.lk/icds/icds-2025/proceedings/#flipbook-df_1135/78/) | [publications/ICDS-2025](publications/ICDS-2025) |
+| *Enhancing Sleep Stage Classification with Vision Transformers*: undergraduate thesis (defence slides) | University of Colombo, 2025 | [Department of Statistics, UoC](https://science.cmb.ac.lk/statistics/) | [publications/Thesis-UOC-2025](publications/Thesis-UOC-2025) |
 
 Chronology: thesis (March 2025) → ICDS 2025 → SICASH 2026. The thesis used a ~12,000-epoch subsample with random epoch-level splits. The ICDS work ranks 1,016 transformation/fusion/channel strategies by embedding separability. The SICASH paper re-runs the pipeline on 80 recordings with subject-wise cross-validation, so its numbers are the most rigorous. See [publications/README.md](publications/README.md).
 
@@ -46,8 +46,8 @@ Chronology: thesis (March 2025) → ICDS 2025 → SICASH 2026. The thesis used a
 
 | If you want to... | Go to |
 |---|---|
-| Understand the research in 5 minutes | the table above, then the [SICASH paper folder](publications/SICASH-2026) (README and slides) |
-| Read the full study | [thesis](publications/Thesis-UOC-2025) for the most detail, the [SICASH paper](publications/SICASH-2026) for the most rigorous results |
+| Understand the research in 5 minutes | the table above, then the [SICASH folder](publications/SICASH-2026) (README and slides) |
+| See the full results | the [SICASH folder](publications/SICASH-2026) for the most rigorous results, the [thesis defence slides](publications/Thesis-UOC-2025) for the thesis |
 | Run or extend the code | [docs/code-guide.md](docs/code-guide.md) |
 | Know what may not match the papers | [docs/NOTES.md](docs/NOTES.md) |
 
@@ -61,9 +61,9 @@ Chronology: thesis (March 2025) → ICDS 2025 → SICASH 2026. The thesis used a
 ├── tests/               Unit tests (14)
 ├── docs/                Code guide, design notes, notebook map, shared figures
 └── publications/
-    ├── SICASH-2026/     Paper, slides, speaker notes
-    ├── ICDS-2025/       Abstract and extended abstract
-    └── Thesis-UOC-2025/ Thesis PDF, defence slides, LaTeX source
+    ├── SICASH-2026/     Slides, speaker notes, results summary
+    ├── ICDS-2025/       Conference presentation
+    └── Thesis-UOC-2025/ Defence slides
 ```
 
 ## Code and reproducibility status

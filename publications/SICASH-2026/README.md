@@ -6,12 +6,11 @@ Janith R.R.H. Ramanayakage · [Chandima N.P.G. Arachchige](https://www.res.cmb.a
 
 *Department of Statistics, Faculty of Science, University of Colombo, Sri Lanka*
 
-![Status](https://img.shields.io/badge/paper-available-6A2C91)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Dataset](https://img.shields.io/badge/dataset-CAP%20Sleep%20Database-blue)
 ![Model](https://img.shields.io/badge/model-ViT--B%2F16-6A2C91)
 
-[Paper](SICASH%20Paper%202026.pdf) · [Slides (PDF)](SICASH%20Presentation.pdf) · [Slides (PPTX)](SICASH%20Presentation.pptx) · [Speaker notes](speaker-notes.md) · [Code](../../)
+[Slides (PDF)](SICASH%20Presentation.pdf) · [Slides (PPTX)](SICASH%20Presentation.pptx) · [Speaker notes](speaker-notes.md) · [Code](../../)
 
 </div>
 
