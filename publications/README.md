@@ -2,7 +2,7 @@
 
 | Folder | Official link | Contents |
 |---|---|---|
-| [SICASH-2026](SICASH-2026) | Not yet available | Slides (PDF and PPTX), speaker notes, README with full results tables |
+| [SICASH-2026](SICASH-2026) | Not yet available | Slides (PDF and PPTX), README with abstract |
 | [ICDS-2025](ICDS-2025) | [Proceedings](https://science.cmb.ac.lk/icds/icds-2025/proceedings/#flipbook-df_1135/78/) | Conference presentation (`.pdf`) |
 | [Thesis-UOC-2025](Thesis-UOC-2025) | [Department of Statistics, UoC](https://science.cmb.ac.lk/statistics/) | Defence slides (`.pptx`) |
 
