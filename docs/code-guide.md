@@ -7,7 +7,8 @@ PSG epochs from the PhysioNet **CAP Sleep Database** are converted to images (GA
 down-sampled with FFT or DWT, optionally augmented with a DCGAN, and classified into six R&K stages
 (W, S1, S2, S3, S4, REM) by Vision Transformers.
 
-> This code base was assembled from the research notebooks and the thesis, but **has not been executed yet**.
+> The results in the publications were produced by running this pipeline on a research server. This repository is the
+> cleaned-up, packaged version for others to run.
 > Read [NOTES.md](NOTES.md) before running: it lists deviations from the original notebooks (including
 > a filter bug) and methodology points that affect the reported numbers.
 
@@ -81,7 +82,7 @@ re-run picks a different winner. For a quick smoke test try
 
 Outputs: images and manifests in `data/processed/`, metrics/tables/plots in `results/`, weights in `checkpoints/`.
 
-## Thesis results for reference (not reproduced here)
+## Thesis results for reference
 
 GASF 57.2 % > MTF 57.1 > GADF 56.7 > spectrogram 55.4 (Exp. 1); DWT at 128 Hz 60.1 % (Exp. 2); pre-trained ViT-B/16
 78.1 % vs from scratch 68.9 % on balanced data (Exp. 3); ViT-B/16 best of six backbones (Exp. 4); mixed

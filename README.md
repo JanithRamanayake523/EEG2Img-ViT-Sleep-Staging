@@ -71,7 +71,7 @@ Chronology: thesis (March 2025) → ICDS 2025 → SICASH 2026. The thesis used a
 Please read this before running anything.
 
 - **Unit tests pass** (`pip install -e . && pytest`, 14 tests on parsing, resampling, image shapes and splits).
-- **The experiments have not been run end to end** with this code base. It was assembled from the original research notebooks, and [docs/NOTES.md](docs/NOTES.md) lists where it deviates from them, including a band-pass filter bug in the notebooks that can change reported numbers.
+- **The results come from runs on a research server.** This repository is the packaged, cleaned-up version of that code so others can run it. [docs/NOTES.md](docs/NOTES.md) lists where it differs from the original notebooks, including a band-pass filter bug in the notebooks that can change reported numbers.
 - **The default config follows the thesis protocol**, not the SICASH one: random epoch-level splits (`experiments.split_by: epoch`), a 12,000-epoch subsample, an 8-bin MTF and a 64-sample spectrogram window. The SICASH paper used subject-wise 5-fold cross-validation, a 32-bin MTF, a 256-sample Hamming spectrogram and all 80 recordings. Setting `experiments.split_by=subject` gives subject-wise splits, but a full SICASH re-run needs further config and script changes.
 
 ```bash

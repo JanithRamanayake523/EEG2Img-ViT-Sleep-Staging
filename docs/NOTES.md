@@ -1,7 +1,8 @@
 # Notes: decisions, assumptions and issues found in the original notebooks
 
-These matter for the paper because some of them can change reported numbers. Nothing in this code base has
-been run yet, so none of the thesis results are reproduced or verified here.
+These matter for the paper because some of them can change reported numbers. The published results were produced
+on a research server from the original notebooks; this repository is the packaged version, so the points below
+list where it differs from them.
 
 ## Things the original notebooks did that this code base changes
 
